@@ -1,14 +1,40 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func main() {
-   var a , b , sum int
-   fmt.Scan(&a)
-    for i := 1; a < 5; i++ {
-        fmt.Scan(&b) 
-        if 10<=b && b%8==0 && b<=99 
-            sum+=b
-            fmt.Println(sum)
-    }
+	var a, c float64
+	var b string
+
+	fmt.Println("Введите первое число")
+	fmt.Scan(&a)
+	fmt.Println("Укажите что сделать с числом")
+	fmt.Scan(&b)
+	fmt.Println("Введите второе число")
+	fmt.Scan(&c)
+
+	switch b {
+	case "+":
+		result := a + c
+		fmt.Printf("%.2f + %.2f = %.2f\n", a, c, result)
+	case "-":
+		result := a - c
+		fmt.Printf("%.2f + %.2f = %.2f\n\n", a, c, result)
+	case "*":
+		result := a * c
+		fmt.Printf("%.2f + %.2f = %.2f\n", a, c, result)
+
+	case "/":
+		if c == 0 {
+			fmt.Println("Деление на ноль недопустимо")
+		} else {
+			result := a / c
+			fmt.Printf("%.2f + %.2f = %.2f\n", a, c, result)
+		}
+	default:
+		fmt.Println("ввели не правельный символ, требуется указать только + - * или / ")
+	}
+
 }

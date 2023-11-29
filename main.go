@@ -1,8 +1,6 @@
-package main
+package calculator
 
-import (
-	"fmt"
-)
+import "fmt"
 
 func main() {
 	var a, c float64
